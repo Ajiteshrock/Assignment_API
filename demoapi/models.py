@@ -31,7 +31,6 @@ class Movie(models.Model):
     name = models.CharField(max_length=200)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     release_date = models.DateField()
-   
     def __str__(self):
         return self.name
 
@@ -39,7 +38,7 @@ class Votes(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     upvote = models.BooleanField()
     downvote = models.BooleanField()
-    movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie,on_delete=models.CASCADE,related_name='movie_votes')
 
     def __str__(self):
         return self.movie.name
@@ -47,7 +46,7 @@ class Votes(models.Model):
 class Review(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     review = models.TextField()
-    movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie,on_delete=models.CASCADE,related_name='movie_review')
 
     def __str__(self):
-        return self.review
+        return str(self.review)+str(self.movie)

@@ -66,4 +66,5 @@ class MovieSerializer(serializers.ModelSerializer):
     genre = serializers.CharField(source="genre.genre")
     class Meta:  
         model = models.Movie
-        fields = ('name','release_date','genre','review',)
+        fields = ('name','release_date','genre','movie_review','movie_votes')
+

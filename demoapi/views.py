@@ -73,3 +73,14 @@ class VoteMovie(CreateAPIView):
 class WriteMovieReview(CreateAPIView):
     serializer_class = serializers.ReviewSerializer
     permission_classes = [IsAuthenticated,]
+
+"""
+Public Views 
+"""
+
+class MoviesListView(ListAPIView):
+    serializer_class = serializers.MovieSerializer
+    permission_classes = [AllowAny,]
+    queryset = models.Movie.objects.all()
+
+   
