@@ -25,8 +25,7 @@ SECRET_KEY = 'v6%0@(b)2@2ruw%ok=r&m$9(g2c#rr+g@4_)e841&^s+o9n=(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
+DJANGO_ALLOWED_HOSTS=['.example.com','example.herokuapp.com']
 
 # Application definition
 
