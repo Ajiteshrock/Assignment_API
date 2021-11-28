@@ -6,7 +6,7 @@
 ### pip install requirements..txt
 ### Git clone - The URL 
 ### Create Superuser - python manage.py craetesuperuser
-### Go to Assignment_API and run Python manage.py runserver
+### Go to Assignment_API and run python manage.py runserver
 
 ## End-Points
 
