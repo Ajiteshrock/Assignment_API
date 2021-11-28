@@ -46,7 +46,7 @@ class Votes(models.Model):
 class Review(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     review = models.TextField()
-    movie = models.ForeignKey(Movie,on_delete=models.CASCADE,related_name='movie_review')
+    movie = models.ForeignKey(Movie,on_delete=models.CASCADE,related_name='review_movie')
 
     def __str__(self):
         return str(self.review)+str(self.movie)

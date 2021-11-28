@@ -12,8 +12,9 @@ from rest_framework.permissions import IsAuthenticated , IsAdminUser
 from . import models
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.shortcuts import get_object_or_404
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 
-  
 #Registration View
 class RegisterUser(CreateAPIView):
     serializer_class = serializers.RegistrationSerializer
@@ -43,9 +44,10 @@ class AddMovie(CreateAPIView):
     permission_classes = [AllowAny,]
     serializer_class = serializers.MovieSerializer
 
+@swagger_auto_schema(methods=['post'] ,manual_parameters=None,request_body=serializers.GenreSerializer)
 @api_view(['POST','GET'])
-@permission_classes([IsAuthenticated,])
-def SetFavGenre(request):
+@permission_classes([IsAuthenticated,]) 
+def SetFavGenre(request):         
     if request.method == "POST":
         data = request.data
         request.data['user'] = request.user.id
@@ -59,11 +61,14 @@ def SetFavGenre(request):
     for i in all_genres:
         l.append(i.genre)
     return Response({'All Genres':l})
-      
-class MoviesDetail(RetrieveAPIView):
-    serializer_class = serializers.MovieSerializer
-    queryset = models.Movie.objects.all()
-    permission_classes = [IsAuthenticated,]
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated,])
+def MoviesDetailView(request,pk):
+        movie = models.Movie.objects.filter(id=pk)
+        serializer = serializers.MovieSerializer(movie, many=True)
+        return Response(serializer.data)
 
 class VoteMovie(CreateAPIView):
     serializer_class = serializers.VoteSerializer
@@ -78,9 +83,41 @@ class WriteMovieReview(CreateAPIView):
 Public Views 
 """
 
-class MoviesListView(ListAPIView):
-    serializer_class = serializers.MovieSerializer
-    permission_classes = [AllowAny,]
-    queryset = models.Movie.objects.all()
+@api_view(['GET'])
+@permission_classes([AllowAny,])
+def MoviesListView(request):
+    query = request.query_params.get('sort_by',None)
+    if query==None:
+        movies = models.Movie.objects.all().order_by('-id')
+        serializer = serializers.MovieSerializer(movies, many=True)
+        return Response(serializer.data)
+    else:
+        movies = models.Movie.objects.all().order_by('-id')
+        serializer = serializers.MovieSerializer(movies,many=True)
+        upvotes = []
+        response_dict_ = {}
+        Response_data = {'Movie_Name and '+query:[]}
+        visited={}
+        for i in serializer.data:
+            i = dict(i)
+            for j in i:
+                if i['name'] not in visited:
+                    visited[i['name']]=1
+                    Response_data['Movie_Name and '+query].append((i['name'],i['votes_'][query]))   
+        
+        def sort_by_votes(tup): 
+            lst = len(tup) 
+            for i in range(0, lst): 
+                for j in range(0, lst-i-1): 
+                    if (tup[j][1] > tup[j + 1][1]): 
+                        temp = tup[j] 
+                        tup[j]= tup[j + 1] 
+                        tup[j + 1]= temp 
+            return tup  
+        Response_data = sort_by_votes(Response_data['Movie_Name and '+query])
+        return Response(Response_data)
+
+    
+
 
    
