@@ -14,16 +14,20 @@
 
 ## End-Points
 
+## Public APIs
+### demoapi/movies/ - Public API (No need to authentication) Showing all Movie List
+### demoapi/movies/?sort_by=Upvote - Sorting bases on upvoting 
+### demoapi/movies/?sort_by=Downvotes - Sorting bases on downvoting
+
+## Private APIs (Login Required)
 ### documentation/ - For Whole Documentation
 ### admin/ - For administration login
 ### demoapi/register - For Registration
 ### demoapi/login - For Login (Token Based Authenticaton ( JWT Token))
-### demoapi/movies/ - Public API (No need to authentication) Showing all Movie List
 ### demoapi/movies/id - Showing Particular Movie Detail ( Auth required)
 ### demoapi/movies/vote - Upvoting/Downvoting for a Movie
 ### demoapi/movies/review - Writing a review for a movie
 ### demoapi/movies/set_genre - Setting Favourite Genre
 ### demoapi/movies/add - Adding Movie in movie_database
-### demoapi/movies/?sort_by=Upvote - Sorting bases on upvoting 
-### demoapi/movies/?sort_by=Downvotes - Sorting bases on downvoting
+### demoapi/movies/getrecommendation - Getting Recommendation according to Fav Genre .
 
