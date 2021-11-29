@@ -8,9 +8,12 @@
 
 ### Set-Up
 ## Please install latest version of PIP from [here](https://pypi.org/project/pip/)
+## Install [Python](https://www.python.org/)
+### Authentication Method ( JWT Token Based)
 
+
+### git clone https://github.com/Ajiteshrock/Assignment_API.git
 ### pip install requirements..txt
-### Git clone - The URL 
 ### Create Superuser - python manage.py craetesuperuser
 ### Go to Assignment_API and run python manage.py runserver
 
