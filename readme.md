@@ -4,6 +4,7 @@
 ### Deployed on Heroku 
 ### [Here](https://imdbcloneapi1.herokuapp.com)
 ### [Documentation|Swagger UI](https://imdbcloneapi1.herokuapp.com/documentation/)
+### [POSTMAN Collections](https://github.com/Ajiteshrock/Assignment_API/tree/master/postman)
 
 ### Set-Up
 ## Please install latest version of PIP from [here](https://pypi.org/project/pip/)
