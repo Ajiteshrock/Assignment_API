@@ -3,7 +3,7 @@
 ### For Live preview of the APP
 ### Deployed on Heroku 
 ### [Here](https://imdbcloneapi1.herokuapp.com)
-### [Documentation](https://imdbcloneapi1.herokuapp.com/documentation/)
+### [Documentation|Swagger UI](https://imdbcloneapi1.herokuapp.com/documentation/)
 
 ### Set-Up
 ## Please install latest version of PIP from [here](https://pypi.org/project/pip/)
