@@ -67,13 +67,13 @@ class UserSerializer(serializers.ModelSerializer):
 
 class MovieSerializer(serializers.ModelSerializer):
     genre = serializers.CharField(source="genre.genre")
-    allreviews = serializers.SerializerMethodField('reviews')
-    votes_ = serializers.SerializerMethodField('votes')
+    allreviews = serializers.SerializerMethodField('reviews',read_only=True)
+    votes_ = serializers.SerializerMethodField('votes',read_only=True)
     class Meta:    
         model = models.Movie
         fields = ('name','release_date','genre','allreviews','votes_')
     
-    def reviews(self,obj):
+    def reviews(self,obj):  
         reviews = obj.review_movie.all()
         l=[{'Review and Written By':[]}]
         for i in reviews:
@@ -90,3 +90,12 @@ class MovieSerializer(serializers.ModelSerializer):
             elif i.downvote:
                 l['Downvotes']+=1
         return l
+
+
+class MovieAddSerializer(serializers.ModelSerializer):
+    
+    class Meta:    
+        model = models.Movie
+        fields = ('name','release_date','genre',)
+    
+  

@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "81250b39-85d3-4c52-a395-7d60bca94126",
+		"name": "Public APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ALL movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "ALL movies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:53:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "543"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"The Shining\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": []\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 0,\n            \"Downvotes\": 0\n        }\n    },\n    {\n        \"name\": \"Interstellar\",\n        \"release_date\": \"2021-02-17\",\n        \"genre\": \"Thriller\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"Amazing Movie . \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 2,\n            \"Downvotes\": 0\n        }\n    },\n    {\n        \"name\": \"Avengers\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"movie is really refreshing. \",\n                        \"Navin\"\n                    ],\n                    [\n                        \"movie is amazing \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 3,\n            \"Downvotes\": 0\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Sort Movies List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Sorting By Upvoting",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/?sorty_by=Upvote",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								""
+							],
+							"query": [
+								{
+									"key": "sorty_by",
+									"value": "Upvote"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:54:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "543"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"The Shining\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": []\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 0,\n            \"Downvotes\": 0\n        }\n    },\n    {\n        \"name\": \"Interstellar\",\n        \"release_date\": \"2021-02-17\",\n        \"genre\": \"Thriller\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"Amazing Movie . \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 2,\n            \"Downvotes\": 0\n        }\n    },\n    {\n        \"name\": \"Avengers\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"movie is really refreshing. \",\n                        \"Navin\"\n                    ],\n                    [\n                        \"movie is amazing \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 3,\n            \"Downvotes\": 0\n        }\n    }\n]"
+				},
+				{
+					"name": "Sorting By Downvoting",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/?sorty_by=Downvotes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								""
+							],
+							"query": [
+								{
+									"key": "sorty_by",
+									"value": "Downvotes"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:54:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "543"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"The Shining\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": []\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 0,\n            \"Downvotes\": 0\n        }\n    },\n    {\n        \"name\": \"Interstellar\",\n        \"release_date\": \"2021-02-17\",\n        \"genre\": \"Thriller\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"Amazing Movie . \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 2,\n            \"Downvotes\": 0\n        }\n    },\n    {\n        \"name\": \"Avengers\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"movie is really refreshing. \",\n                        \"Navin\"\n                    ],\n                    [\n                        \"movie is amazing \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 3,\n            \"Downvotes\": 0\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}

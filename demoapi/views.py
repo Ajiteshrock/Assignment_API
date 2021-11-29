@@ -42,7 +42,7 @@ class LoginUser(TokenObtainPairView):
 
 class AddMovie(CreateAPIView):
     permission_classes = [AllowAny,]
-    serializer_class = serializers.MovieSerializer
+    serializer_class = serializers.MovieAddSerializer
 
 @swagger_auto_schema(methods=['post'] ,manual_parameters=None,request_body=serializers.GenreSerializer)
 @api_view(['POST','GET'])
@@ -120,4 +120,13 @@ def MoviesListView(request):
     
 
 
-   
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def GetRecommendationAPI(request):
+    id = request.user.id
+    user_model = models.ProfileUser.objects.get(user_id=id)
+    genre = user_model.fav_genre
+    genre = models.Genre.objects.get(genre=genre)
+    recommeded_movies = models.Movie.objects.filter(genre=genre)
+    serializer = serializers.MovieSerializer(recommeded_movies,many=True)
+    return Response(serializer.data)

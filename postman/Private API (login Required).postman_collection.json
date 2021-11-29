@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "ad4991b0-c545-4a97-81d3-109a69b54242",
+		"name": "Private API (login Required)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM4MTAzMzY4LCJqdGkiOiI2M2UyNDc5YTQxZjk0NDI5OTlkYzc1YjI2MjkzYzcwNCIsInVzZXJfaWQiOjMsInVzZXJuYW1lIjoiUmFnaGF2In0.cus8lxZ1zLulCPmwfDeVvyDAOHyRJ3BBiplBLHo_Cg8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Avengers\",\r\n    \"release_date\":\"2021-01-01\",\r\n    \"review\":\"Good Movie\",\r\n    \"genre\":\"1\"\r\n    \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/demoapi/movie/add/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demoapi",
+						"movie",
+						"add",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Movie",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"The Shining\",\r\n    \"release_date\":\"2021-01-01\",\r\n    \"genre\":\"1\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/add/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								"add",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:52:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"The Shining\",\n    \"release_date\": \"2021-01-01\",\n    \"genre\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Set Fav Genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM4MTA1MDI0LCJqdGkiOiI5YTE3NTBkYzUyMTE0YzU4OTVhMTk4MTYxZjZjZmY4ZCIsInVzZXJfaWQiOjMsInVzZXJuYW1lIjoiUmFnaGF2In0.EoM8wjvdxu4F9PjBNXbjLd545aXsHkN2HF3_uB42osw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Genre\":\"Thriller\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/demoapi/movie/set_genre/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demoapi",
+						"movie",
+						"set_genre",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM4MTA2ODY3LCJqdGkiOiIwYzIyOTY5OWZmNTg0ZDRjYjA0ZDVlMDJjOWRkZjA3YiIsInVzZXJfaWQiOjMsInVzZXJuYW1lIjoiUmFnaGF2In0.wQrQldLpRLavWQB7ncUSX5SwqddhiEO5gfnj2MYcvnc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/demoapi/movies/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demoapi",
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Movie Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:48:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "216"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Avengers\",\n        \"release_date\": \"2021-01-01\",\n        \"genre\": \"Comedy\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"movie is really refreshing. \",\n                        \"Navin\"\n                    ],\n                    [\n                        \"movie is amazing \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 3,\n            \"Downvotes\": 0\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Vote Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM4MTA3NDczLCJqdGkiOiIwYmMwYjllOGZhZTg0OTk1YjVkYWVmZWExMDUzZDI1ZCIsInVzZXJfaWQiOjMsInVzZXJuYW1lIjoiUmFnaGF2In0.OjRVs-29SZyeDhyQ69j3LkWURECPLD98dp_JgfH_9J0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"2\",\r\n    \"upvote\":\"true\",\r\n    \"downvote\":\"false\",\r\n    \"movie\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/demoapi/movies/vote/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demoapi",
+						"movies",
+						"vote",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM4MTA4MjY3LCJqdGkiOiJkM2UwMDBkNTJmNmU0NzM5YTNiNmEzZjUzODhhYWZjYSIsInVzZXJfaWQiOjMsInVzZXJuYW1lIjoiUmFnaGF2In0.8de99GS1Ko6hpcwiOy8nd_C7tG9zy61FjGAG6cy-OK0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review\":\"Ajitesh movie is good\",\r\n    \"user\":\"2\",\r\n    \"movie\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/demoapi/movies/review/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demoapi",
+						"movies",
+						"review",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Review",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"review\":\"movie is amazing\",\r\n    \"user\":\"2\",\r\n    \"movie\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/review/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								"review",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:48:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"review\": \"movie is amazing\",\n    \"user\": 2,\n    \"movie\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Recommendation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM4MTY5NDk0LCJqdGkiOiIxMzY4MDBkMTExZDg0NGY2OTc2MWFjOTRmOTIzOTgxNyIsInVzZXJfaWQiOjMsInVzZXJuYW1lIjoiUmFnaGF2In0.EZnU4CPBPhr6pXxfU82J78VI8ZTvuMCcyc5NYeu46cM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/demoapi/movies/getrecommendation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"demoapi",
+						"movies",
+						"getrecommendation"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Recommendation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/demoapi/movies/getrecommendation",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"demoapi",
+								"movies",
+								"getrecommendation"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 06:47:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Interstellar\",\n        \"release_date\": \"2021-02-17\",\n        \"genre\": \"Thriller\",\n        \"allreviews\": [\n            {\n                \"Review and Written By\": [\n                    [\n                        \"Amazing Movie . \",\n                        \"Navin\"\n                    ]\n                ]\n            }\n        ],\n        \"votes_\": {\n            \"Upvote\": 2,\n            \"Downvotes\": 0\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}
